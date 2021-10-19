@@ -42,4 +42,4 @@ Shopping lists should only be retrievable by the user that created them/they bel
 ## Q&A
 > How should I submit my test when I'm done?
 
-Fork this repo and send a pull request when you think you are done.
+Clone this repo and send a link when you think you are done. Do *not* fork the repo.
