@@ -2,7 +2,7 @@
 
 At Sorted we work with a range of modern technology and tools, but most of our services are written in Python & Django. This test has been designed to give you an opportunity to show your knowledge of Django and API design. There is no 'right' answer - we're most interested in how you choose to solve the problem and why you chose to solve it in that way. There are no wrong answers, as long as your code successfully runs.
 
-Be sure to read **all** of this document carefully, and follow the guidelines within.
+Be sure to read **all** of this document carefully, and follow the guidelines within. If you have any clarifying questions, then please get in touch.
 
 ## Task Outline
 Everyone at Sorted is passionate about food - and we're creating tools to help foodies all around the world cook better, and smarter. We give people the tools and know-how, but the rest is up to them.
@@ -28,13 +28,16 @@ A flagged ingredient cannot be included in new shopping lists, but already gener
 
 **Retrieve shopping lists**
 
-Shopping lists should only be retrievable by the user that created them/they belong to. The total cost of a shopping list should be calculated the first time it's retrieved, and subsequently if it's changed
+Shopping lists should only be retrievable by the user that created them/they belong to. The total cost of a shopping list should be calculated the first time it's retrieved, and subsequently only if it's changed. Please optimise this calculation for database query performance.
+
+The shopping list API response should contain all of the shopping list items. The shopping list item ingredient data should appear in the response either as a list of FKs, or as a nested array of ingredient objects, based on an optional URL parameter `e.g. <url>?expanded=ingredients`
 
 ## Notes
 * Seed the ingredient & shopping list tables with the provided data. Add these as part of the initial migrations.
 * The shopping list API(s) will need user authentication. The ingredient API(s) should be publicly accessible.
 * Don't forget to add documentation comments to the API endpoints to explain how to use them
-* Add an indication of how you would approach testing across the layers of the API
+* Assume that any clients using this API expect a consistent error message response/format
+* Add some examples of how you would approach testing across the layers of the API
 * Write concise and clear commit messages
 * How you might add caching backed with redis _(optional)_
 * Add rate limiting to the API at 60 req/min _(optional)_
